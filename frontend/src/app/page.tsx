@@ -6,7 +6,7 @@ export default function Home() {
   const [name, setName] = useState<string | null>(null);
 
   const getName = async () => {
-    const res =  await fetch('/api/name');
+    const res =  await fetch(`${process.env.NEXT_PUBLIC_API_URL}/name/`);
     const data = await res.json()
     setName(data.name);
   };
